@@ -1,0 +1,98 @@
+/* App 组件样式 */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.app-info {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  z-index: 1000;
+}
+
+.app-info span {
+  background-color: var(--bg-secondary);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* 离线状态 */
+.app.offline::before {
+  content: "离线模式";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-warning);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 10000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* 窗口焦点状态 */
+.app:not(.window-focused) {
+  opacity: 0.95;
+}
+
+/* 加载状态覆盖 */
+.app-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--text-inverse);
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* 主题切换动画 */
+.app {
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .app-info {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "electron": "25.0.0"
+      }
+    }],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ]
+}

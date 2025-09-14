@@ -49,7 +49,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={`layout ${actualTheme} ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
       {/* 标题栏 (Windows/Linux) */}
-      {process.platform !== 'darwin' && (
+      {window.electronUtils.platform !== 'darwin' && (
         <div className="titlebar">
           <div className="titlebar-drag-region">
             <div className="titlebar-title">Electron Advanced Demo</div>

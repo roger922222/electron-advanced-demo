@@ -29,7 +29,7 @@ export class WindowManager {
         nodeIntegration: false,
         contextIsolation: true,
         enableRemoteModule: false,
-        preload: path.join(__dirname, '../preload/preload.js')
+        preload: path.join(__dirname, 'preload.js')
       }
     };
 
@@ -92,7 +92,7 @@ export class WindowManager {
         nodeIntegration: config.webPreferences?.nodeIntegration ?? false,
         contextIsolation: config.webPreferences?.contextIsolation ?? true,
         enableRemoteModule: config.webPreferences?.enableRemoteModule ?? false,
-        preload: config.webPreferences?.preload ?? path.join(__dirname, '../preload/preload.js'),
+        preload: config.webPreferences?.preload ?? path.join(__dirname, 'preload.js'),
         webSecurity: true,
         allowRunningInsecureContent: false
       }

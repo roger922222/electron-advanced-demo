@@ -28,7 +28,7 @@ export const SystemInfo: React.FC = () => {
       try {
         // 模拟系统信息数据
         const mockSystemInfo: SystemInfo = {
-          platform: process.platform || 'unknown',
+          platform: window.electronUtils.platform || 'unknown',
           arch: 'x64',
           nodeVersion: '20.11.0',
           electronVersion: '30.0.0',

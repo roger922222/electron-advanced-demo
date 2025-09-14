@@ -45,13 +45,11 @@ if (document.readyState === 'loading') {
 }
 
 // 开发环境下的热重载支持
-if (process.env.NODE_ENV === 'development') {
+// @ts-ignore
+if (module.hot) {
   // @ts-ignore
-  if (module.hot) {
-    // @ts-ignore
-    module.hot.accept('./App', () => {
-      console.log('热重载 App 组件');
-      initializeApp();
-    });
-  }
+  module.hot.accept('./App', () => {
+    console.log('热重载 App 组件');
+    initializeApp();
+  });
 }

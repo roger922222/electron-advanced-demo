@@ -8,7 +8,7 @@ interface FileInfo {
   lastModified: Date;
 }
 
-const FileManager: React.FC = () => {
+export const FileManager: React.FC = () => {
   const [files, setFiles] = useState<FileInfo[]>([]);
   const [currentPath, setCurrentPath] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<FileInfo | null>(null);
@@ -232,5 +232,3 @@ const FileManager: React.FC = () => {
     </div>
   );
 };
-
-export default FileManager;

@@ -8,7 +8,7 @@ interface DatabaseRecord {
   createdAt: Date;
 }
 
-const DatabaseManager: React.FC = () => {
+export const DatabaseManager: React.FC = () => {
   const [records, setRecords] = useState<DatabaseRecord[]>([]);
   const [selectedRecord, setSelectedRecord] = useState<DatabaseRecord | null>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -410,5 +410,3 @@ const DatabaseManager: React.FC = () => {
     </div>
   );
 };
-
-export default DatabaseManager;

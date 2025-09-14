@@ -19,7 +19,7 @@ interface SystemInfo {
   uptime: number;
 }
 
-const SystemInfo: React.FC = () => {
+export const SystemInfo: React.FC = () => {
   const [systemInfo, setSystemInfo] = useState<SystemInfo | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -345,5 +345,3 @@ const SystemInfo: React.FC = () => {
     </div>
   );
 };
-
-export default SystemInfo;

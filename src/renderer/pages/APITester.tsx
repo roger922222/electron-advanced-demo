@@ -23,7 +23,7 @@ interface RequestHistory {
   error?: string;
 }
 
-const APITester: React.FC = () => {
+export const APITester: React.FC = () => {
   const [method, setMethod] = useState<string>('GET');
   const [url, setUrl] = useState<string>('https://jsonplaceholder.typicode.com/posts/1');
   const [headers, setHeaders] = useState<string>('{\n  "Content-Type": "application/json"\n}');
@@ -582,5 +582,3 @@ const APITester: React.FC = () => {
     </div>
   );
 };
-
-export default APITester;
